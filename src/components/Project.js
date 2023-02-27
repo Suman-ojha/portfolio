@@ -6,12 +6,12 @@ const project = [
     {
         name1: "ChatApp",
         details: "Group Chat , Node.JS, Socket.io , Html, Css",
-        url: "https://img.freepik.com/free-vector/hand-holding-phone-with-conversation-girl-chat-bot-mobile-app-talking-robot-online-flat-vector-illustration-technology-assistance-concept-banner-website-design-landing-page_74855-24649.jpg"
+        url: "https://github-readme-streak-stats.herokuapp.com/?user=suman-ojha&"
     },
     {
         name1: "Auto Quote Generator",
         details: "Fetch Api , Html, Css , Java Script",
-        url: "https://media.geeksforgeeks.org/wp-content/uploads/20210220191848/RandomQuoteGenerator.jpg"
+        url: "https://leetcard.jacoblin.cool/suman099?theme=light&font=Abel&ext=heatmap"
 
     },
     {
@@ -22,11 +22,12 @@ const project = [
 ]
 const Project = () => {
     return (
-        <Row xs={1} md={2} className="g-3 justify-content-center align-items-center">
+        <Row className="g-3 justify-content-center align-items-center">
             {project.map((param, idx) => {
                 const { name1, details, url } = param;
-                return <Col xs={4} key={idx}>
-                    <img src={url} alt={name1} className="imageFit" />
+                return <Col xs={12} md={4} key={idx} className="imageFit">
+                    <img src={url} alt={name1} loading='lazy' draggable="false" />
+                    <p className='m-0 text-center'>{details}</p>
                 </Col>
             })}
         </Row>

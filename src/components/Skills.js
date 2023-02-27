@@ -1,5 +1,9 @@
-import React from 'react'
+
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+
 import { Col, Container, Row } from 'react-bootstrap'
+
 
 const skill = [
     { name: "C++" },
@@ -10,9 +14,9 @@ const skill = [
     { name: "Problem Solving" }
 
 ]
-const Skills = () => {
+const Skills = ({skillRef}) => {
     return (
-        <Container fluid id="skill" className='mt-5 pt-5'>
+        <Container fluid id="skill" className='mt-5 pt-5' ref={skillRef}>
             <Row className='justify-content-center align-items-center mt-5 pt-5'>
                 <Col>
                     <h4 className='text-center'> Skills</h4>
@@ -31,17 +35,8 @@ const Skills = () => {
                 </Col>
             </Row>
             <Row className='my-5' >
-                {skill.map((param, index) => {
-                    const { name } = param;
-                    return (
-                        <Col key={index} xs={2} className="d-flex justify-content-center align-items-center">
-                            <div className='skill_round'>
-                                <h6>{name}</h6>
-                            </div>
-                        </Col>
-                    )
+               
 
-                })}
 
 
             </Row>
