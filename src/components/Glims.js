@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Col, Container, Row, Tab, Tabs } from 'react-bootstrap'
 import Project from './Project'
 import Resume from './Resume'

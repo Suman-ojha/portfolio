@@ -1,43 +1,71 @@
-import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
-import Skills from './Skills';
-const navBtn = [
-    {
-        name: "home",
-        link: "#home",
-    },
-    {
-        name: "skill",
-        link: "#skill",
-    },
-    {
-        name: "glimps",
-        link: "#glimps",
-    },
-    {
-        name: "contact",
-        link: "#contact",
-    },
-]
+import React, { memo } from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
-function Navigation({ home, skills, glimps }) {
-    return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='m-0 p-0 navContainer'>
-            <Container fluid >
-                <Navbar.Brand className='fontStyle p-0' onClick={home}>Suman Ojha</Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav" className='justify-content-end'>
-                    <Nav className='text-capitalize'>
-                        {navBtn.map((params, index) => {
-                            const { name, link } = params;
-                            return <Nav.Link key={index} onClick={name === "home" ? home : name === "skill" ? skills : name === "glimps" && glimps} className="text-light me-3">{name}</Nav.Link>
-                        })}
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-    )
+const navBtn = [
+  {
+    name: "home",
+    // link: "#home",
+  },
+  {
+    name: "skill",
+    // link: "#skill",
+  },
+  {
+    name: "glimps",
+    // link: "#glimps",
+  },
+  {
+    name: "contact",
+    // link: "#contact",
+  },
+];
+
+function Navigation({ home, skills, glimps, contact, change }) {
+  return (
+    <Navbar
+      collapseOnSelect
+      // bg="light"
+      expand="lg"
+      variant={change ? "light" : "dark"}
+      className={`m-0 p-0 ${change ? "navContainerScroll" : "navContainer"}`}
+    >
+      <Container fluid className="bg-transparent">
+        <Navbar.Brand className="bg-transparent fontStyle p-0 " onClick={home}>
+          Suman Ojha
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav bg-transparent" />
+        <Navbar.Collapse
+          id="responsive-navbar-nav"
+          className="justify-content-end bg-transparent"
+        >
+          <Nav className="text-capitalize bg-transparent text-center">
+            {navBtn.map((params, index) => {
+              const { name} = params;
+              return (
+                <Nav.Link
+                  key={index}
+                  onClick={
+                    name === "home"
+                      ? home
+                      : name === "skill"
+                      ? skills
+                      : name === "glimps"
+                      ? glimps
+                      : name === "contact" && contact
+                  }
+                  className={`text-${
+                    change ? "dark" : "light"
+                  } me-3 bg-transparent`}
+                >
+                  {name}
+                </Nav.Link>
+              );
+            })}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
 
-export default Navigation
+export default memo(Navigation);

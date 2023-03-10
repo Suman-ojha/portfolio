@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import resume from "../img/Suman Ojha_1 .pdf";
 const Resume = () => {
   return (
-    <div>Resume</div>
-  )
-}
+    <div className="embed-responsive embed-responsive-16by9 Resume">
+      <iframe title="resume" width="400px" height="450px" className="embed-responsive-item" src={resume}></iframe>
+    </div>
+  );
+};
 
-export default Resume
+export default Resume;
