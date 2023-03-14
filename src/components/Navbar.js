@@ -26,7 +26,7 @@ function Navigation({ home, skills, glimps, contact, change }) {
       collapseOnSelect
       // bg="light"
       expand="lg"
-      variant={change ? "light" : "dark"}
+      variant="dark"
       className={`m-0 p-0 ${change ? "navContainerScroll" : "navContainer"}`}
     >
       <Container fluid className="bg-transparent">
@@ -53,9 +53,8 @@ function Navigation({ home, skills, glimps, contact, change }) {
                       ? glimps
                       : name === "contact" && contact
                   }
-                  className={`text-${
-                    change ? "dark" : "light"
-                  } me-3 bg-transparent`}
+                  className="text-light
+                  } me-3 bg-transparent"
                 >
                   {name}
                 </Nav.Link>
