@@ -60,7 +60,7 @@ function App() {
         contact={clickContact}
         change={change}
       />
-      <Home homeRef={homeRef} contactRef={contactRef} />
+      <Home homeRef={homeRef} clickContact={clickContact} />
       <Skills skillRef={skillRef} />
       <Glims glimpsRef={glimpsRef} />
       <Contact contactRef={contactRef} />
@@ -69,4 +69,4 @@ function App() {
   );
 }
 
-export default memo(App);
+export default App;

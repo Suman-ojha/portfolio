@@ -17,7 +17,7 @@ function Home({ homeRef, clickContact }) {
             Optimization. As a core programmer, I love taking on challenges and
             love being part of the solution.
           </p>
-          <button className="cta" onClick={clickContact}>
+          <button className="cta" onClick={()=>clickContact()}>
             Let's Connect
           </button>
         </Col>
