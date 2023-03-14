@@ -45,11 +45,12 @@ function App() {
     });
   };
 
-  const clickContact = () =>
+  const clickContact = () =>{
+    console.log("call to Contact")
     window.scrollTo({
       top: contactRef.current.offsetTop - 220,
       behavior: "smooth",
-    });
+    })};
 
   return (
     <>
