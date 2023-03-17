@@ -6,6 +6,8 @@ import Skills from "./components/Skills";
 import Glims from "./components/Glims";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Lottie from 'react-lottie';
+import Duck from "./img/Duck.json"
 // import { Routes, Route } from "react-router-dom";
 function App() {
   const homeRef = useRef(null);
@@ -13,9 +15,23 @@ function App() {
   const glimpsRef = useRef(null);
   const contactRef = useRef(null);
   const [change, setChange] = useState(false);
-
+  //for the preloader
+  const [PreLoader, setPreLoader] = useState(false);
+    //for the pre-loader
+    useEffect(() => {
+      setPreLoader(true);
+      setTimeout(()=>{
+          setPreLoader(false);
+      },2000)
+    }, []);
+    const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: Duck,
+    };
   const checkScroll = (event) => {
     // console.log(event.target.documentElement.scrollTop);
+    
     if (event.target.documentElement.scrollTop > 100) {
       return setChange(true);
     }
@@ -52,8 +68,12 @@ function App() {
       behavior: "smooth",
     })};
 
+
+    
   return (
     <>
+    {PreLoader ? (<div  className='loader'><Lottie options={defaultOptions} /></div>):(
+      <>
       <Navbar
         home={clickHome}
         skills={clickSkill}
@@ -66,6 +86,8 @@ function App() {
       <Glims glimpsRef={glimpsRef} />
       <Contact contactRef={contactRef} />
       <Footer />
+      </>
+      )}
     </>
   );
 }

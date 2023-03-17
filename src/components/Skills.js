@@ -7,13 +7,18 @@ import "react-circular-progressbar/dist/styles.css";
 import { Col, Container, Row } from "react-bootstrap";
 
 const skill = [
-  { name: "c++", percentage: 70 },
+  { name: "c++", percentage: 90 },
   { name: "python", percentage: 70 },
-  { name: "java", percentage: 70 },
-  { name: "javascript", percentage: 70 },
-  { name: "DS", percentage: 70 },
-  { name: "Html", percentage: 70 },
+  { name: "java", percentage: 75 },
+  { name: "javascript", percentage: 85 },
+  { name: "DS", percentage: 90 },
+  { name: "Html", percentage: 85 },
   { name: "Css", percentage: 70 },
+  { name: "React", percentage: 60 },
+  { name: "MongoDB", percentage: 75 },
+  { name: "Node.Js", percentage: 80 },
+  { name: "ExpressJs", percentage: 80 },
+  
 ];
 const breakPoints = [
   { width: 1, itemsToShow: 1 },

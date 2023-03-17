@@ -1,6 +1,7 @@
 
 
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 
 const ContactPage=(param) =>{
@@ -11,6 +12,13 @@ const ContactPage=(param) =>{
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', event.target, 'YOUR_USER_ID')
+    // .then((result) => {
+    //   console.log(result.text);
+    // }, (error) => {
+    //   console.log(error.text);
+    // });
     
     setName('');
     setEmail('');
